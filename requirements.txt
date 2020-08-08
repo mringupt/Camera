@@ -1,12 +1,8 @@
 base64image==0.5.1
-click==7.1.2
-Flask==1.1.2
+Click==7.0
+Flask==1.1.1
 gunicorn==19.9.0
-Flask-SocketIO==4.3.1
 itsdangerous==1.1.0
-Jinja2==2.11.2
+Jinja2==2.10.1
 MarkupSafe==1.1.1
-numpy==1.19.1
-opencv-python==4.3.0.36
-six==1.15.0
-Werkzeug==0.16.1
+Werkzeug==0.15.6
