@@ -1,33 +1,47 @@
-
 <!doctype html>
 <html>
 <head>
-	<title>WebRTC: Still photo capture demo</title>
-	<meta charset='utf-8'>
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css" media="all">
-	<script src="static/js/capture.js">
-	</script>
+    <title>WebRTC: Still photo capture demo</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css" media="all">
+    <script src="static/js/capture.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf-8">
+</script>
 </head>
 <body>
-<div class="contentarea">
-	<h1>
-		MDN - WebRTC: Still photo capture demo
-	</h1>
-	<p>
-		Media stream using your built-in webcam, fetch an image from that stream, and create a PNG using that image.
-	</p>
-  <div class="camera">
-    <video id="video">Video stream not available.</video>
-    <button id="startbutton">Take photo</button> 
-  </div>
-  <canvas id="canvas">
-  </canvas>
-  <div class="output">
-    <img id="photo" alt="The screen capture will appear in this box."> 
-  </div>
-	<p>
-		Made by mrinali gupta
-	</p>
-</div>
+    <div class="contentarea">
+        <h1>
+             Photo capture Demo
+        </h1>
+        <p>
+            Media stream using your built-in webcam, fetch an image from that stream, and create a PNG using that image
+            in the backedend server
+
+        </p>
+        <div class="camera">
+            <video id="video">Video stream not available.</video>
+            <!--<button id="startbutton">Take photo</button>-->
+        </div>
+        <canvas id="canvas"></canvas>
+        <div class="output">
+            <img id="photo" alt="The screen capture will appear in this box.">
+            <button id="predictbutton">Predict photo</button>
+        </div>
+        <p>
+            Made by mrinali gupta
+        </p>
+    </div>
+    <div>
+        <form id="emit" method="POST" action='#'>
+            <input type="text" name="emit_data" id="emit_data" placeholder="Message">
+            <input type="submit" value="Echo">
+        </form>
+
+    </div>
+    <div id="log"></div>
+    <input type="file" id="files" accept="image/*" />
+    
 </body>
 </html>
