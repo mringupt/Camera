@@ -24,7 +24,7 @@
     function startup() {
         console.log(document.domain);
 
-        var socket = io.connect('http://' + document.domain + ':' + location.port);
+        var socket = io.connect('https://' + document.domain + ':' + location.port);
         socket.on('connect',
             function () {
                 console.log("socket");
